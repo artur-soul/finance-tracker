@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import './db/index.js';
+import authRoutes from './routes/auth.js';
 
 dotenv.config();
 
@@ -35,6 +36,9 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
+
+// Маршруты
+app.use('/api/auth', authRoutes);
 
 // Обработчик 404 для API
 app.use('/api', (req, res) => {
