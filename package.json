@@ -1,29 +1,27 @@
 {
   "name": "finance-tracker",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs",
-    "test": "tests"
-  },
+  "description": "Личный финансовый учёт — итоговая работа по веб-технологиям",
+  "type": "module",
+  "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "vitest run"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "keywords": ["finance", "tracker", "express", "sqlite"],
+  "author": "artur",
+  "license": "MIT",
   "dependencies": {
     "bcrypt": "^6.0.0",
     "better-sqlite3": "^13.0.3",
-    "dotenv": "^18.0.9",
-    "express": "^5.3.0",
-    "express-session": "^1.19.0"
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "express-session": "^1.18.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.14",
-    "supertest": "^7.3.2",
-    "vitest": "^5.1.0"
+    "nodemon": "^3.1.10",
+    "supertest": "^7.1.4",
+    "vitest": "^3.2.4"
   }
 }
