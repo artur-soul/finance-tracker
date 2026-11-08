@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import './db/index.js';
 import authRoutes from './routes/auth.js';
 import categoriesRoutes from './routes/categories.js';
+import transactionsRoutes from './routes/transactions.js';
 
 dotenv.config();
 
@@ -41,6 +42,7 @@ app.get('/api/health', (req, res) => {
 // Маршруты
 app.use('/api/auth', authRoutes);
 app.use('/api/categories', categoriesRoutes);
+app.use('/api/transactions', transactionsRoutes);
 
 // Обработчик 404 для API
 app.use('/api', (req, res) => {
